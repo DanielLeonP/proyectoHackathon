@@ -1,21 +1,70 @@
-CREATE TABLE Medico (idMedico NUMBER PRIMARY KEY, NombreMedico VARCHAR(20),ApellidoMedico VARCHAR(20), CorreoMedico VARCHAR(20), ContrasenaMedico VARCHAR(20);
+CREATE TABLE Medico (
+    IdMedico INT PRIMARY KEY, 
+    NombreMedico VARCHAR(20),
+    ApellidoMedico VARCHAR(20), 
+    CorreoMedico VARCHAR(20), 
+    ContrasenaMedico VARCHAR(20) 
+);
 
-CREATE TABLE Paciente (idPaciente NUMBER PRIMARY KEY, NombrePaciente VARCHAR(20),ApellidoPaciente VARCHAR(20), CorreoPaciente VARCHAR(20), ContrasenaPaciente VARCHAR(20);
+CREATE TABLE Paciente 
+    (idPaciente INT PRIMARY KEY, 
+    NombrePaciente VARCHAR(20),
+    ApellidoPaciente VARCHAR(20), 
+    CorreoPaciente VARCHAR(20), 
+    ContrasenaPaciente VARCHAR(20)
+);
 
-CREATE TABLE Consulta (idConsulta NUMBER PRIMARY KEY, Fecha DATE, idPaciente NUMBER FOREIGN KEY, idMedico NUMBER FOREIGN KEY, DescripcionConsulta VARCHAR(200);
+CREATE TABLE Consultas (
+    idConsulta INT PRIMARY KEY, 
+    Fecha DATE,     
+    DescripcionConsulta VARCHAR(200),
+    idPaciente INT, 
+    idMedico INT
+);
 
-CREATE TABLE Sintomas (idCSintomas NUMBER PRIMARY KEY, NombreSintoma VARCHAR(20), DescripcionSintoma VARCHAR(200);
+CREATE TABLE Sintomas (
+    idCSintomas INT PRIMARY KEY, 
+    NombreSintoma VARCHAR(20), 
+    DescripcionSintoma VARCHAR(200)
+);
 
-CREATE TABLE Recomendaciones (idCRecomendaciones NUMBER PRIMARY KEY, NombreRecomendaciones VARCHAR(20), DescripcionRecomendaciones VARCHAR(200);
+CREATE TABLE Recomendaciones (
+    idCRecomendaciones INT PRIMARY KEY, 
+    NombreRecomendaciones VARCHAR(20), 
+    DescripcionRecomendaciones VARCHAR(200)
+);
 
-CREATE TABLE SintomasRecomendaciones (idRecomendaciones NUMBER FOREIGN KEY,idCSintomas NUMBER FOREIGN KEY;
+CREATE TABLE SintomasRecomendaciones (
+    idRecomendaciones INT,
+    idCSintomas INT
+);
 
-CREATE TABLE HistorialClinico (idHistorialClinico NUMBER PRIMARY KEY,idPaciente NUMBER FOREIGN KEY, PadecimientoFamiliar VARCHAR(50);
+CREATE TABLE HistorialClinico (
+    idHistorialClinico INT PRIMARY KEY,    
+    PadecimientoFamiliar VARCHAR(50),
+    idPaciente INT
+);
 
-CREATE TABLE Enfermedades (idEnfermedad NUMBER PRIMARY KEY,NombreEnfermedad VARCHAR(50), DescripcionEnfermedad VARCHAR(200);
+CREATE TABLE Enfermedades (
+    idEnfermedad INT PRIMARY KEY,
+    NombreEnfermedad VARCHAR(50), 
+    DescripcionEnfermedad VARCHAR(200)
+);
 
-CREATE TABLE Prevensiones (idPrevension NUMBER PRIMARY KEY, idEnfermedad NUMBER FOREIGN KEY, DescripcionPrev VARCHAR(200));
+CREATE TABLE Prevensiones (
+    idPrevension INT PRIMARY KEY,      
+    DescripcionPrev VARCHAR(200),
+    idEnfermedad INT
+);
 
-CREATE TABLE Riesgos (idRiesgo NUMBER PRIMARY KEY, idEnfermedad NUMBER FOREIGN KEY, DescripcionRiesgo VARCHAR(200));
+CREATE TABLE Riesgos (
+    idRiesgo INT PRIMARY KEY,     
+    DescripcionRiesgo VARCHAR(200),
+    idEnfermedad INT
+);
 
-CREATE TABLE Tratamiento (idTratamiento NUMBER PRIMARY KEY, idEnfermedad NUMBER FOREIGN KEY, DescripcionTratamiento VARCHAR(200));
+CREATE TABLE Tratamiento (
+    idTratamiento INT PRIMARY KEY, 
+    DescripcionTratamiento VARCHAR(200),
+    idEnfermedad INT 
+);
