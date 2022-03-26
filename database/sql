@@ -1,96 +1,244 @@
-DROP TABLE Medicos;
-DROP TABLE Pacientes;
+DROP TABLE Medicos;  
+DROP TABLE Pacientes;   
 DROP TABLE Consultas;
-DROP TABLE Sintomas;
+DROP TABLE Sintomas;          
 DROP TABLE Recomendaciones;
-DROP TABLE SintomasRecomendaciones;
+DROP TABLE SintomasRecomendaciones;             
 DROP TABLE HistorialesClinicos;
 DROP TABLE Enfermedades;
 DROP TABLE Prevensiones;
 DROP TABLE Riesgos;
 DROP TABLE Tratamientos;
+DROP TABLE ActividadesFisicas;
+DROP TABLE Monitoreos;
+DROP TABLE Alimentos;
+DROP TABLE AlimentosRecomendaciones;
+DROP TABLE PacientesActividadesFisicas;
+DROP TABLE PacientesSintomas;
+    
 
+    
 
 CREATE TABLE Medicos (
-    IdMedico INT PRIMARY KEY, 
-    NombreMedico VARCHAR(20),
-    ApellidoMedico VARCHAR(20), 
-    CorreoMedico VARCHAR(20), 
-    ContrasenaMedico VARCHAR(20) 
+    idMedico INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(30) NOT NULL,
+    apellido VARCHAR(50) NOT NULL, 
+    correo VARCHAR(30) NOT NULL, 
+    contrasena VARCHAR(20) NOT NULL,
+    cedulaProfesional INT NOT NULL,
+    especialidad VARCHAR(40) NOT NULL
 );
 
-CREATE TABLE Pacientes 
-    (idPaciente INT PRIMARY KEY, 
-    NombrePaciente VARCHAR(20),
-    ApellidoPaciente VARCHAR(20), 
-    CorreoPaciente VARCHAR(20), 
-    ContrasenaPaciente VARCHAR(20)
+CREATE TABLE Pacientes (
+    idPaciente INT PRIMARY KEY AUTO_INCREMENT, 
+    nombre VARCHAR(20) NOT NULL,
+    apellido VARCHAR(50) NOT NULL, 
+    correo VARCHAR(30) UNIQUE NOT NULL, 
+    contrasena VARCHAR(20)  NOT NULL
 );
 
 CREATE TABLE Consultas (
-    idConsulta INT PRIMARY KEY, 
-    Fecha DATE,     
-    DescripcionConsulta VARCHAR(200),
+    idConsulta INT PRIMARY KEY AUTO_INCREMENT, 
+    Fecha DATE NOT NULL,     
+    descripcion VARCHAR(200) NOT NULL,
     idPaciente INT, 
     idMedico INT
 );
 
 CREATE TABLE Sintomas (
-    idCSintomas INT PRIMARY KEY, 
-    NombreSintoma VARCHAR(20), 
-    DescripcionSintoma VARCHAR(200)
-);
+    idSintoma INT PRIMARY KEY AUTO_INCREMENT, 
+    NombreSintoma VARCHAR(20) NOT NULL, 
+    descripcion VARCHAR(200) NOT NULL
+); 
 
 CREATE TABLE Recomendaciones (
-    idCRecomendaciones INT PRIMARY KEY, 
-    NombreRecomendaciones VARCHAR(20), 
-    DescripcionRecomendaciones VARCHAR(200)
+    idRecomendacion INT PRIMARY KEY AUTO_INCREMENT, 
+    nombre VARCHAR(20) NOT NULL, 
+    descripcion VARCHAR(200) NOT NULL
 );
 
 CREATE TABLE SintomasRecomendaciones (
-    idRecomendaciones INT,
-    idCSintomas INT
+    idSintomaRecomendacion INT PRIMARY KEY AUTO_INCREMENT, 
+    idRecomendacion INT,
+    idSintoma INT
+);
+
+CREATE TABLE ActividadesFisicas (
+    idActividad INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(20) NOT NULL,
+    tiempoRealizado INT NOT NULL,
+    descripcion VARCHAR(200) NOT NULL
+);
+
+CREATE TABLE PacientesActividadesFisicas (
+    idPacientesActividadesFisicas INT PRIMARY KEY AUTO_INCREMENT,
+    idPaciente INT,
+    idActividadFisica INT
+);
+
+CREATE TABLE Monitoreos (
+    idMonitoreo INT PRIMARY KEY AUTO_INCREMENT,
+    presionArterial INT NOT NULL,
+    colesterol INT NOT NULL,
+    progreso INT NOT NULL, 
+    idPaciente INT
 );
 
 CREATE TABLE HistorialesClinicos (
-    idHistorialClinico INT PRIMARY KEY,    
-    PadecimientoFamiliar VARCHAR(50),
+    idHistorial INT PRIMARY KEY AUTO_INCREMENT,    
+    FamiliarPadecimiento VARCHAR(50),
     idPaciente INT
 );
 
 CREATE TABLE Enfermedades (
-    idEnfermedad INT PRIMARY KEY,
-    NombreEnfermedad VARCHAR(50), 
-    DescripcionEnfermedad VARCHAR(200)
+    idEnfermedad INT PRIMARY KEY AUTO_INCREMENT, 
+    NombreEnfermedad VARCHAR(50) NOT NULL, 
+    DescripcionEnfermedad VARCHAR(200) NOT NULL
 );
 
 CREATE TABLE Prevensiones (
-    idPrevension INT PRIMARY KEY,      
-    DescripcionPrev VARCHAR(200),
+    idPrevension INT PRIMARY KEY AUTO_INCREMENT,      
+    DescripcionPrev VARCHAR(200) NOT NULL                   ,
     idEnfermedad INT
 );
 
 CREATE TABLE Riesgos (
-    idRiesgo INT PRIMARY KEY,     
-    DescripcionRiesgo VARCHAR(200),
+    idRiesgo INT PRIMARY KEY AUTO_INCREMENT,     
+    DescripcionRiesgo VARCHAR(200) NOT NULL,
     idEnfermedad INT
 );
 
 CREATE TABLE Tratamientos (
-    idTratamiento INT PRIMARY KEY, 
-    DescripcionTratamiento VARCHAR(200),
+    idTratamiento INT PRIMARY KEY AUTO_INCREMENT, 
+    DescripcionTratamiento VARCHAR(200) NOT NULL,
     idEnfermedad INT 
 );
 
+CREATE TABLE Alimentos (
+    idAlimento INT PRIMARY KEY AUTO_INCREMENT, 
+    nombreAlimento VARCHAR(20) NOT NULL,
+    caloriasAportadas VARCHAR(20) NOT NULL,
+    tipoAlimento VARCHAR(20) NOT NULL,
+    descripcion VARCHAR(200) NOT NULL
+);
+
+CREATE TABLE AlimentosRecomendaciones (
+    idAlimentoRecomendacion INT PRIMARY KEY AUTO_INCREMENT, 
+    idAlimento INT,
+    idRecomendacion INT 
+);
+
+CREATE TABLE PacientesSintomas (
+    idPacienteSintoma INT PRIMARY KEY AUTO_INCREMENT, 
+    idPaciente INT,
+    idSintoma INT 
+);
+
+CREATE TABLE EnfermedadesPacientes (
+    idEnfermedadesPaciente INT PRIMARY KEY AUTO_INCREMENT,
+    idPaciente INT,
+    idEnfermedad INT
+);
+
+/* CONSTRAINTS*/
+ALTER TABLE Consultas
+    ADD FOREIGN KEY (idMedico) REFERENCES Medicos(idMedico);
+
+ALTER TABLE Consultas
+    ADD FOREIGN KEY (idPaciente) REFERENCES Pacientes(idPaciente);
+
+ALTER TABLE HistorialesClinicos
+    ADD FOREIGN KEY (idPaciente) REFERENCES Pacientes(idPaciente);
+
+ALTER TABLE PacientesSintomas
+    ADD FOREIGN KEY (idPaciente) REFERENCES Pacientes(idPaciente);
+
+ALTER TABLE PacientesSintomas
+    ADD FOREIGN KEY (idSintoma) REFERENCES Sintomas(idSintoma);
+
+ALTER TABLE PacientesActividadesFisicas
+    ADD FOREIGN KEY (idPaciente) REFERENCES Pacientes(idPaciente);
+
+
+ALTER TABLE PacientesActividadesFisicas
+    ADD FOREIGN KEY (idActividadFisica) REFERENCES ActividadesFisicas(idActividad);
+
+ALTER TABLE Monitoreos
+    ADD FOREIGN KEY (idPaciente) REFERENCES Pacientes(idPaciente);
+
+ALTER TABLE EnfermedadesPacientes
+    ADD FOREIGN KEY (idPaciente) REFERENCES Pacientes(idPaciente);
+
+    
+
+ALTER TABLE Prevensiones
+    ADD FOREIGN KEY (idEnfermedad) REFERENCES Enfermedades(idEnfermedad);
+
+ALTER TABLE Riesgos
+    ADD FOREIGN KEY (idEnfermedad) REFERENCES Enfermedades(idEnfermedad);
+
+ALTER TABLE Tratamientos
+    ADD FOREIGN KEY (idEnfermedad) REFERENCES Enfermedades(idEnfermedad);
+
+
+ALTER TABLE AlimentosRecomendaciones
+    ADD FOREIGN KEY (idAlimento) REFERENCES Alimentos(idAlimento);
+
+ALTER TABLE AlimentosRecomendaciones
+    ADD FOREIGN KEY (idRecomendacion) REFERENCES Recomendaciones(idRecomendacion);
+
+
+ALTER TABLE SintomasRecomendaciones
+    ADD FOREIGN KEY (idRecomendacion) REFERENCES Recomendaciones(idRecomendacion);
+
+ALTER TABLE SintomasRecomendaciones
+    ADD FOREIGN KEY (IdSintoma) REFERENCES Sintomas(IdSintoma);
+
+ALTER TABLE EnfermedadesPacientes
+    ADD FOREIGN KEY (IdPaciente) REFERENCES Pacientes(IdPaciente);
+    
+ALTER TABLE EnfermedadesPacientes
+    ADD FOREIGN KEY (idEnfermedad) REFERENCES Enfermedades(idEnfermedad);
+    
 /* INSERTS */
-IdMedico INT PRIMARY KEY, 
-    NombreMedico VARCHAR(20),
-    ApellidoMedico VARCHAR(20), 
-    CorreoMedico VARCHAR(20), 
-    ContrasenaMedico VARCHAR(20) 
 
-INSERT INTO Medico VALUES (1, 'Israel', 'Nieto Ugalde', 'israelnu88@gmail.com', 'isra123');
+INSERT INTO Medicos (nombre, apellido, correo, contrasena, cedulaProfesional, especialidad) VALUES('Israel', 'Nieto Ugalde', 'israelnu88@gmail.com', 'isra123', 12345, 'Cirujano');
 
-INSERT INTO Paciente VALUES (1, 'Daniel', 'Aros Ramirez', 'aros@gmail.com', '456');
+INSERT INTO Medicos (nombre, apellido, correo, contrasena, cedulaProfesional, especialidad) VALUES ('Daniel', 'Aros Ramirez', 'aros@gmail.com', '456', 14568, 'Pediatra');
 
-INSERT INTO Paciente VALUES (1, 'Alex', 'Vazquez Chavez', 'alex@correoinventado.com', '123');
+INSERT INTO Pacientes (nombre, apellido, correo, contrasena) VALUES ('Alex', 'Vazquez Chavez', 'alex@correoinventado.com', '123');
+
+INSERT INTO Pacientes (nombre, apellido, correo, contrasena) VALUES ('Angie', 'Paulin Garcia', 'angie@correoinventado.com', '1234');
+
+/*
+    Enfermedades
+    ActividadesFísicas
+    Sintomas
+    Recomendaciones
+    Alimentos
+*/
+
+
+INSERT INTO Enfermedades (NombreEnfermedad, DescripcionEnfermedad) VALUES ('Coronaria', 'Lesión o enfermedad en los principales vasis sianguineos del corazón');
+INSERT INTO Enfermedades (NombreEnfermedad, DescripcionEnfermedad)  VALUES ('Hipertensión arterial', 'Afección en la que la presión de la sangre hacia las paredes de la arteria es demasiado alta');
+INSERT INTO Enfermedades (NombreEnfermedad, DescripcionEnfermedad) VALUES ('Para cardiorrespitario', 'Pérdida inesperada y repentina de la función cardíaca, la respitación y el conocimiento');
+
+
+INSERT INTO ActividadesFísicas (nombre, tiempoRealizado, descripcion) VALUES ('Push ups', 3, 'boca abajo se flexionan lps brazos para bajar el pecho y se extienden para subir');
+INSERT INTO ActividadesFísicas VALUES ('Squads', 2, 'con las piernas abiertas a la altura de los hombros, se flexionan las rodillas para bajar y se exptienen para subir el cuerpo');
+INSERT INTO ActividadesFísicas VALUES ('Abs', 2, 'recostado boca abajo y con las piernar flexionadas, flexionar el abdomen para levantar el tronco y llevarlo a las rodillas');
+
+
+INSERT INTO Sintomas (nombreE)VALUES ('Dolor en el pecho', 'dolor insoportable en el pecho');
+INSERT INTO Sintomas VALUES ('Fatiga', 'flojera de hacer las cosas o cansancio');
+INSERT INTO Sintomas VALUES ('Dolor en el cuello', 'dolor insoportable en el cuello');
+
+
+INSERT INTO Recomendaciones VALUES ('Descansar y evitar carga pesada de trabajo', 'Dolor en el pecho');
+INSERT INTO Recomendaciones VALUES ('Descansar por un cierto lapso de tiempo', 'Fatiga');
+INSERT INTO Recomendaciones VALUES ('Ajustar la postura al estar sentado', 'Dolor en el cuello');
+
+
+INSERT INTO Alimentos VALUES ('Ensalada', '100', 'fit', 'Comida balanceada entre verduras y frutas');
+INSERT INTO Alimentos VALUES ('Huevito con jamon', '300', 'desayuno', 'Contiene un huevito y jamon');
+INSERT INTO Alimentos VALUES ('Cereal con leche', '150', 'fit', 'contiene el cereal y leche');
