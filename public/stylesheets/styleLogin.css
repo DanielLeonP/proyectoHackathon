@@ -1,6 +1,27 @@
 *{
     padding: 0px;
     margin: 0px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#logo{
+    position: relative;
+    margin-top: calc(50% - (308px / 2));
+    margin-left: calc(50% - (616px / 2));
+    width: 616px;
+}
+
+#logo>img{
+    filter: invert(0.4) sepia(1) hue-rotate(305deg) saturate(5000%);
+    width: 100%;   
+}
+
+p{
+    color: white;
+    width: 484px;
+    margin-left: calc(50% - 242px);
+    margin-top: 50px;
+    text-align: center;
 }
 
 section{
@@ -10,29 +31,66 @@ section{
 }
 
 .container-left{
-    width: 50%;
+    width: 45%;
     height: 100%;
-    background-color: #FF0000;
+    background-color: #486faa;
 }
 
 .container-rigth{
-    width: 40%;
+    width: 55%;
     height: 100%;
-    background-color: #FFF;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .form{
-    width: 400px;
-    height: 50%;
-    background-color: aqua;
+    width: 500px;
+    height: 60%;
     padding: 20px;
     box-sizing: border-box;
+}
+
+.form>h1{
+    text-align: center;
 }
 
 .form form {
     display: flex;
     flex-direction: column;
+}
+
+.margentop{
+    margin-top: 30px;
+}
+
+.margentopdif{
+    margin-top: 50px;
+}
+
+#recordarPass{
+    height: 20px;
+    margin-top: 20px;
+}
+
+#cajacheck{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+#labelcajacheck{
+    width: 250px;
+    height: 20px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+input{
+    height: 30px;
+    font-size: 18px;
+}
+
+.margenbot{
+    margin-bottom: 10px;
 }

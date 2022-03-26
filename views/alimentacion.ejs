@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,41 +8,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alimentacion</title>
 </head>
+
 <body>
     <header>
 
     </header>
     <section>
-        <div class="container-alimento">
-            <h2>Platillo 1</h2>
-            <h3>Descripción</h3>
-            <p>Hola Mundo</p>
-        </div>
-        <div class="container-alimento">
-            <h2>Platillo 1</h2>
-            <h3>Descripción</h3>
-            <p>Hola Mundo</p>
-        </div>
-        <div class="container-alimento">
-            <h2>Platillo 1</h2>
-            <h3>Descripción</h3>
-            <p>Hola Mundo</p>
-        </div>
-        <div class="container-alimento">
-            <h2>Platillo 1</h2>
-            <h3>Descripción</h3>
-            <p>Hola Mundo</p>
-        </div>
-        <div class="container-alimento">
-            <h2>Platillo 1</h2>
-            <h3>Descripción</h3>
-            <p>Hola Mundo</p>
-        </div>
-        <div class="container-alimento">
-            <h2>Platillo 1</h2>
-            <h3>Descripción</h3>
-            <p>Hola Mundo</p>
-        </div>
+        <% for(alimento of alimentos){ %>
+            <div class="container-alimento">
+                <h2>Platillo 1</h2>
+                <h3><%= alimento.nombreAlimento %></h3> <br>
+                <h3><%= alimento.caloriasAportadas %></h3>  <br>
+                <h3><%= alimento.tipoAlimento %></h3>  <br>
+                <h3><%= alimento.descripcion %></h3>  <br>
+                <p>Hola Mundo</p>
+            </div>
+            <% }; %>
+
     </section>
 </body>
+
 </html>

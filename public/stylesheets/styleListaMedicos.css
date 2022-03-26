@@ -9,13 +9,13 @@
     background-color: #ff8080;
     position: fixed;
 }
-#Hamburguesa{
+#BackArrow{
     width: 45px;
     height: 100%;
     float: left;
     background-color: rgba(0,0,0,0);
 }
-#Hamburguesa>img{
+#BackArrow>img{
     width: 40px;
     line-height:  45px;
 }
@@ -37,13 +37,17 @@
     top: 45px;
     height: calc(100% - 45px);
     width: 100%;
-    background-color: rgb(99, 99, 99);
-    scroll-behavior: smooth;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+.Text{
+
 }
 .Button{
     width: 90%;
-    height: 50px;
-    background-color: rebeccapurple;
-    margin-top: 40px;
+    height: 80px;
+    background-color: #A2A0A0;
+    margin-top: 30px;
     margin-left: 65px;
+    border: 0;
 }

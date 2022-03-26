@@ -12,15 +12,39 @@
         rel="stylesheet">
     <title>Lista de Médicos</title>
 </head>
-<body>
 
+<body>
     <div id="header">
-        <input type="image" id="Hamburguesa" src="https://cdn0.iconfinder.com/data/icons/typicons-2/24/arrow-back-outline-128.png">
-        <div id="BarTitulo"><h1 id="Titulo">Happy Heart</h1></div>
+        <input type="image" id="BackArrow"
+            src="https://cdn0.iconfinder.com/data/icons/typicons-2/24/arrow-back-outline-128.png">
+        <div id="BarTitulo">
+            <h1 id="Titulo">Happy Heart</h1>
+        </div>
     </div>
-    <div id="CuerpoContenido">
-        <div class="Button"></div>
-    </div>
-    
+
+    <% for(medico of Medicos){ %>
+        <div class="CuerpoContenido">
+            <div id="TarjetaDeMedico">
+                <h3 class="Text">
+                    <%= medico.nombre %>
+                        <%= medico.apellido %>
+                </h3> <br>
+                <h3 class="Text">
+                    <%= medico.correo %>
+                </h3> <br>
+                <h3 class="Text">
+                    <%= medico.cedulaProfesional %>
+                </h3> <br>
+                <h3 class="Text">
+                    <%= medico.especialidad %>
+                </h3> <br>
+                <form action="/listaMedicos/solicitar/<%= medico.idMedico %>" method="post">
+                    <input type="submit" value="Solicitar">
+                </form>
+            </div>
+        </div>
+        <% }; %>
+
 </body>
+
 </html>

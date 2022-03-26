@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medico</title>
+    <title>Consultas</title>
 </head>
-
 <body>
-    <% for(Paciente of Pacientes){ %>
+    <h3>
+ 
+        <%= Paciente.nombre %>
+        <%= Paciente.apellido %>
+    </h3>
+    <h3>
+        <%= Paciente.correo %>
+    </h3>
+
+    <% for(Consulta of Consultas){ %>
         <div class="container-alimento">
-            <div id="" name="<%= Paciente.nombre %>" onclick="window.location.href = '/medico/paciente/ <%= Paciente.idPaciente %>'">
-                <h3>
-                  
-                    <%= Paciente.nombre %>
-                    <%= Paciente.apellido %>
+            <div>
+                <h3>                  
+                    <%= Consulta.Fecha %>
                 </h3>
                 <h3>
-                    <%= Paciente.correo %>
+                    <%= Consulta.descripcion %>
                 </h3>
             </div>
 
         </div>
         <% }; %>
 </body>
-
 </html>

@@ -248,3 +248,92 @@ INSERT INTO Recomendaciones (nombre,descripcion) VALUES ('Ajustar la postura al 
 INSERT INTO Alimentos (nombreAlimento, caloriasAportadas, tipoAlimento, descripcion) VALUES ('Ensalada', '100', 'fit', 'Comida balanceada entre verduras y frutas');
 INSERT INTO Alimentos (nombreAlimento, caloriasAportadas, tipoAlimento, descripcion) VALUES ('Huevito con jamon', '300', 'desayuno', 'Contiene un huevito y jamon');
 INSERT INTO Alimentos (nombreAlimento, caloriasAportadas, tipoAlimento, descripcion) VALUES ('Cereal con leche', '150', 'fit', 'contiene el cereal y leche');
+
+
+INSERT INTO AlimentosRecomendaciones (idAlimento,idRecomendacion) VALUES (1,1);
+INSERT INTO AlimentosRecomendaciones (idAlimento,idRecomendacion) VALUES (2,1);
+INSERT INTO AlimentosRecomendaciones (idAlimento,idRecomendacion) VALUES (3,1);
+INSERT INTO AlimentosRecomendaciones (idAlimento,idRecomendacion) VALUES (1,2);
+INSERT INTO AlimentosRecomendaciones (idAlimento,idRecomendacion) VALUES (2,3);
+INSERT INTO AlimentosRecomendaciones (idAlimento,idRecomendacion) VALUES (3,3);
+
+INSERT INTO SintomasRecomendaciones (idSintoma,idRecomendacion) VALUES (1,3);
+INSERT INTO SintomasRecomendaciones (idSintoma,idRecomendacion) VALUES (1,2);
+INSERT INTO SintomasRecomendaciones (idSintoma,idRecomendacion) VALUES (1,1);
+INSERT INTO SintomasRecomendaciones (idSintoma,idRecomendacion) VALUES (2,3);
+INSERT INTO SintomasRecomendaciones (idSintoma,idRecomendacion) VALUES (3,3);
+INSERT INTO SintomasRecomendaciones (idSintoma,idRecomendacion) VALUES (3,2);
+
+INSERT INTO PacientesSintomas (idPaciente,idSintoma) VALUES (1,1);
+INSERT INTO PacientesSintomas (idPaciente,idSintoma) VALUES (1,2);
+INSERT INTO PacientesSintomas (idPaciente,idSintoma) VALUES (1,3);
+INSERT INTO PacientesSintomas (idPaciente,idSintoma) VALUES (2,1);
+INSERT INTO PacientesSintomas (idPaciente,idSintoma) VALUES (2,2);
+INSERT INTO PacientesSintomas (idPaciente,idSintoma) VALUES (2,3);
+
+
+INSERT INTO PacientesActividadesFisicas (idPaciente,idActividadFisica) VALUES (2,1);
+INSERT INTO PacientesActividadesFisicas (idPaciente,idActividadFisica) VALUES (2,2);
+INSERT INTO PacientesActividadesFisicas (idPaciente,idActividadFisica) VALUES (2,3);
+INSERT INTO PacientesActividadesFisicas (idPaciente,idActividadFisica) VALUES (1,1);
+INSERT INTO PacientesActividadesFisicas (idPaciente,idActividadFisica) VALUES (1,2);
+INSERT INTO PacientesActividadesFisicas (idPaciente,idActividadFisica) VALUES (1,3);
+
+
+INSERT INTO EnfermedadesPacientes (idPaciente,idEnfermedad) VALUES (1,1);
+INSERT INTO EnfermedadesPacientes (idPaciente,idEnfermedad) VALUES (1,2);
+INSERT INTO EnfermedadesPacientes (idPaciente,idEnfermedad) VALUES (1,3);
+INSERT INTO EnfermedadesPacientes (idPaciente,idEnfermedad) VALUES (2,1);
+INSERT INTO EnfermedadesPacientes (idPaciente,idEnfermedad) VALUES (2,2);
+INSERT INTO EnfermedadesPacientes (idPaciente,idEnfermedad) VALUES (2,3);
+
+INSERT INTO Prevensiones (DescripcionPrev, idEnfermedad) VALUES ('Controle su presión arterial: Es un importante factor de riesgo para las enfermedades del corazón.', 3);
+INSERT INTO Prevensiones (DescripcionPrev, idEnfermedad) VALUES ('Mantenga sus niveles de colesterol y triglicéridos bajo control', 2);
+INSERT INTO Prevensiones (DescripcionPrev, idEnfermedad) VALUES ('Mantenga un peso saludable', 1);
+INSERT INTO Prevensiones (DescripcionPrev, idEnfermedad) VALUES ('Controle su presión arterial: Es un importante factor de riesgo para las enfermedades del corazón.', 1);
+INSERT INTO Prevensiones (DescripcionPrev, idEnfermedad) VALUES ('Mantenga sus niveles de colesterol y triglicéridos bajo control', 3);
+INSERT INTO Prevensiones (DescripcionPrev, idEnfermedad) VALUES ('Mantenga un peso saludable', 2);
+INSERT INTO Prevensiones (DescripcionPrev, idEnfermedad) VALUES ('Aliméntese con una dieta saludable', 3);
+INSERT INTO Prevensiones (DescripcionPrev, idEnfermedad) VALUES ('Haga ejercicio regularmente', 2);
+INSERT INTO Prevensiones (DescripcionPrev, idEnfermedad) VALUES ('No fume', 1);
+
+
+INSERT INTO Riesgos (DescripcionRiesgo, idEnfermedad) VALUES ('Su riesgo de enfermedades del corazón sube a medida que envejece. ', 3);
+INSERT INTO Riesgos (DescripcionRiesgo, idEnfermedad) VALUES ('Algunos factores de riesgo pueden afectar de manera diferente a las mujeres comparados con los hombres. ', 3);
+INSERT INTO Riesgos (DescripcionRiesgo, idEnfermedad) VALUES ('Ciertos grupos étnicos tienen mayores riesgos que otros.', 3);
+INSERT INTO Riesgos (DescripcionRiesgo, idEnfermedad) VALUES ('Usted tiene un mayor riesgo si tiene un familiar cercano que tuvo una enfermedad cardíaca a una edad temprana. ', 2);
+INSERT INTO Riesgos (DescripcionRiesgo, idEnfermedad) VALUES ('Ciertos grupos étnicos tienen mayores riesgos que otros.. ', 2);
+INSERT INTO Riesgos (DescripcionRiesgo, idEnfermedad) VALUES ('Su riesgo de enfermedades del corazón sube a medida que envejece. ', 2);
+INSERT INTO Riesgos (DescripcionRiesgo, idEnfermedad) VALUES ('Algunos factores de riesgo pueden afectar de manera diferente a las mujeres comparados con los hombres. ', 1);
+INSERT INTO Riesgos (DescripcionRiesgo, idEnfermedad) VALUES ('Su riesgo de enfermedades del corazón sube a medida que envejece. ', 1);
+INSERT INTO Riesgos (DescripcionRiesgo, idEnfermedad) VALUES ('Usted tiene un mayor riesgo si tiene un familiar cercano que tuvo una enfermedad cardíaca a una edad temprana. ', 1);
+
+
+INSERT INTO Tratamientos (DescripcionTratamiento, idEnfermedad) VALUES ('Anticoagulantes', 3);
+INSERT INTO Tratamientos (DescripcionTratamiento, idEnfermedad) VALUES ('Antiplaquetarios', 3);
+INSERT INTO Tratamientos (DescripcionTratamiento, idEnfermedad) VALUES ('Cirugías de corazón', 3);
+INSERT INTO Tratamientos (DescripcionTratamiento, idEnfermedad) VALUES ('Dispositivos de asistencia ventricular', 2);
+INSERT INTO Tratamientos (DescripcionTratamiento, idEnfermedad) VALUES ('Marcapasos y desfibriladores', 2);
+INSERT INTO Tratamientos (DescripcionTratamiento, idEnfermedad) VALUES ('Anticoagulantes', 2);
+INSERT INTO Tratamientos (DescripcionTratamiento, idEnfermedad) VALUES ('Dispositivos de asistencia ventricular', 1);
+INSERT INTO Tratamientos (DescripcionTratamiento, idEnfermedad) VALUES ('Cirugías de corazón', 1);
+
+
+INSERT INTO Consultas (Fecha, descripcion, idPaciente, idMedico) VALUES (DATE(sysdate()),'Consulta de cirugía', 1, 1);
+INSERT INTO Consultas (Fecha, descripcion, idPaciente, idMedico) VALUES (DATE(sysdate()),'Tengo gripa', 1, 2);
+INSERT INTO Consultas (Fecha, descripcion, idPaciente, idMedico) VALUES (DATE(sysdate()),'Me duele el estomago', 2, 1);
+INSERT INTO Consultas (Fecha, descripcion, idPaciente, idMedico) VALUES (DATE(sysdate()),'Cardiologia', 2, 2);
+
+
+
+
+
+INSERT INTO Monitoreos (presionArterial, colesterol, progreso, idPaciente) VALUES (100, 15, 3,1);
+INSERT INTO Monitoreos (presionArterial, colesterol, progreso, idPaciente) VALUES (120, 20, 5,2);
+
+INSERT INTO Monitoreos (presionArterial, colesterol, progreso, idPaciente) VALUES (90, 20, 4,1);
+INSERT INTO Monitoreos (presionArterial, colesterol, progreso, idPaciente) VALUES (130, 15, 5,2);
+
+INSERT INTO HistorialesClinicos (FamiliarPadecimiento, idPaciente) VALUES ('Abuela y Madre', 1);
+INSERT INTO HistorialesClinicos (FamiliarPadecimiento, idPaciente) VALUES ('Padre y Madre', 2);
+
