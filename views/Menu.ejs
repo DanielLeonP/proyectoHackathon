@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,25 +8,32 @@
     <link rel="stylesheet" href="/stylesheets/styleMenu.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <title>Menu</title>
 </head>
+
 <body>
-    <div id="header">
-        <div id="Hamoguesa">
-            <img src="https://www.samueldiosdado.com/wp-content/uploads/2017/08/Men%C3%BA-hamburguesa-herramienta-practica-o-icono-inutil.png">
+    <header>
+        <div id="header">
+            <div id="BarTitulo">
+                <h1 id="Titulo">Happy Heart</h1>
+            </div>
         </div>
-        <div id="BarTitulo"><h1 id="Titulo">Happy Heart</h1></div>
-        <div id="Usuario">
-            <img src="https://www.nacionrex.com/__export/1628273274801/sites/debate/img/2021/08/06/avatar-nacion-rex_crop1628272752516.png_423682103.png">
-        </div>        
-    </div>
+    </header>
     <div id="Cuerpo">
-        <button id="BtnAlimentacion" class="ButtonMenu"></button>
-        <button id="BtnFisica" class="ButtonMenu"></button>
-        <button id="BtnMonitoreo" class="ButtonMenu"></button>
-        <button id="BtnEstres" class="ButtonMenu"></button>
-        <button id="BtnConsejos" class="ButtonMenu"></button>
-        <button id="BtnMedico" class="ButtonMenu"></button>
+
+        <button id="BtnAlimentacion" class="ButtonMenu"
+            onclick="window.location.href = '/menu/alimentacion'">Alimentacion</button>
+        <button id="BtnFisica" class="ButtonMenu"
+            onclick="window.location.href = '/menu/actividadFisica'">actividadFisica</button>
+        <button id="BtnMonitoreo" class="ButtonMenu"
+            onclick="window.location.href = '/menu/monitoreo'">monitoreo</button>
+        <button id="BtnEstres" class="ButtonMenu" onclick="window.location.href = '/menu/perfil'">perfil</button>
+        <button id="BtnConsejos" class="ButtonMenu"
+            onclick="window.location.href = '/menu/recomendaciones'">recomendaciones</button>
+        <button id="BtnMedico" class="ButtonMenu"
+            onclick="window.location.href = '/menu/masInformacion'">masInformacio</button>
     </div>
+</body>
 </html>

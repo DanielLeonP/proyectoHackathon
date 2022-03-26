@@ -53,7 +53,7 @@ CREATE TABLE Sintomas (
 
 CREATE TABLE Recomendaciones (
     idRecomendacion INT PRIMARY KEY AUTO_INCREMENT, 
-    nombre VARCHAR(20) NOT NULL, 
+    nombre VARCHAR(100) NOT NULL, 
     descripcion VARCHAR(200) NOT NULL
 );
 
@@ -218,27 +218,33 @@ INSERT INTO Pacientes (nombre, apellido, correo, contrasena) VALUES ('Angie', 'P
     Alimentos
 */
 
+-- DELETE FROM Enfermedades;
+-- DELETE FROM ActividadesFisicas;
+-- DELETE FROM Sintomas;
+-- DELETE FROM Recomendaciones;
+-- DELETE FROM  Alimentos;
+
 
 INSERT INTO Enfermedades (NombreEnfermedad, DescripcionEnfermedad) VALUES ('Coronaria', 'Lesión o enfermedad en los principales vasis sianguineos del corazón');
 INSERT INTO Enfermedades (NombreEnfermedad, DescripcionEnfermedad)  VALUES ('Hipertensión arterial', 'Afección en la que la presión de la sangre hacia las paredes de la arteria es demasiado alta');
 INSERT INTO Enfermedades (NombreEnfermedad, DescripcionEnfermedad) VALUES ('Para cardiorrespitario', 'Pérdida inesperada y repentina de la función cardíaca, la respitación y el conocimiento');
 
 
-INSERT INTO ActividadesFísicas (nombre, tiempoRealizado, descripcion) VALUES ('Push ups', 3, 'boca abajo se flexionan lps brazos para bajar el pecho y se extienden para subir');
-INSERT INTO ActividadesFísicas VALUES ('Squads', 2, 'con las piernas abiertas a la altura de los hombros, se flexionan las rodillas para bajar y se exptienen para subir el cuerpo');
-INSERT INTO ActividadesFísicas VALUES ('Abs', 2, 'recostado boca abajo y con las piernar flexionadas, flexionar el abdomen para levantar el tronco y llevarlo a las rodillas');
+INSERT INTO  ActividadesFisicas (nombre, tiempoRealizado, descripcion) VALUES ('Push ups', 3, 'boca abajo se flexionan lps brazos para bajar el pecho y se extienden para subir');
+INSERT INTO  ActividadesFisicas (nombre, tiempoRealizado, descripcion) VALUES ('Squads', 2, 'con las piernas abiertas a la altura de los hombros, se flexionan las rodillas para bajar y se exptienen para subir el cuerpo');
+INSERT INTO  ActividadesFisicas (nombre, tiempoRealizado, descripcion) VALUES ('Abs', 2, 'recostado boca abajo y con las piernar flexionadas, flexionar el abdomen para levantar el tronco y llevarlo a las rodillas');
 
 
-INSERT INTO Sintomas (nombreE)VALUES ('Dolor en el pecho', 'dolor insoportable en el pecho');
-INSERT INTO Sintomas VALUES ('Fatiga', 'flojera de hacer las cosas o cansancio');
-INSERT INTO Sintomas VALUES ('Dolor en el cuello', 'dolor insoportable en el cuello');
+INSERT INTO Sintomas (NombreSintoma,descripcion) VALUES ('Dolor en el pecho', 'dolor insoportable en el pecho');
+INSERT INTO Sintomas (NombreSintoma,descripcion) VALUES ('Fatiga', 'flojera de hacer las cosas o cansancio');
+INSERT INTO Sintomas (NombreSintoma,descripcion) VALUES ('Dolor en el cuello', 'dolor insoportable en el cuello');
 
 
-INSERT INTO Recomendaciones VALUES ('Descansar y evitar carga pesada de trabajo', 'Dolor en el pecho');
-INSERT INTO Recomendaciones VALUES ('Descansar por un cierto lapso de tiempo', 'Fatiga');
-INSERT INTO Recomendaciones VALUES ('Ajustar la postura al estar sentado', 'Dolor en el cuello');
+INSERT INTO Recomendaciones (nombre,descripcion) VALUES ('Descansar y evitar carga pesada de trabajo', 'Dolor en el pecho');
+INSERT INTO Recomendaciones (nombre,descripcion) VALUES ('Descansar por un cierto lapso de tiempo', 'Fatiga');
+INSERT INTO Recomendaciones (nombre,descripcion) VALUES ('Ajustar la postura al estar sentado', 'Dolor en el cuello');
 
 
-INSERT INTO Alimentos VALUES ('Ensalada', '100', 'fit', 'Comida balanceada entre verduras y frutas');
-INSERT INTO Alimentos VALUES ('Huevito con jamon', '300', 'desayuno', 'Contiene un huevito y jamon');
-INSERT INTO Alimentos VALUES ('Cereal con leche', '150', 'fit', 'contiene el cereal y leche');
+INSERT INTO Alimentos (nombreAlimento, caloriasAportadas, tipoAlimento, descripcion) VALUES ('Ensalada', '100', 'fit', 'Comida balanceada entre verduras y frutas');
+INSERT INTO Alimentos (nombreAlimento, caloriasAportadas, tipoAlimento, descripcion) VALUES ('Huevito con jamon', '300', 'desayuno', 'Contiene un huevito y jamon');
+INSERT INTO Alimentos (nombreAlimento, caloriasAportadas, tipoAlimento, descripcion) VALUES ('Cereal con leche', '150', 'fit', 'contiene el cereal y leche');
