@@ -20,7 +20,7 @@ p{
     color: white;
     width: 484px;
     margin-left: calc(50% - 242px);
-    margin-top: 50px;
+    margin-top: 30px;
     text-align: center;
 }
 
@@ -53,6 +53,7 @@ section{
 
 .form>h1{
     text-align: center;
+    font-size: 30px;
 }
 
 .form form {
@@ -88,9 +89,33 @@ section{
 
 input{
     height: 30px;
-    font-size: 18px;
+    font-size: 18px;  
+}
+
+#BotonIniciarSesion{
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+}
+#BotonIniciarSesion:hover, #btnRegister:hover{
+    background-color: #ff8686;
+}
+
+#btnRegister{
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
 }
 
 .margenbot{
     margin-bottom: 10px;
+}
+
+.novalido{
+    text-align: center;
+    margin-top: 10px;
 }

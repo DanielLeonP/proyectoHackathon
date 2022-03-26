@@ -22,28 +22,30 @@
         </div>
     </div>
 
-    <% for(medico of Medicos){ %>
-        <div class="CuerpoContenido">
+    
+    <div class="CuerpoContenido">
+        <% for(medico of Medicos){ %>
             <div id="TarjetaDeMedico">
                 <h3 class="Text">
                     <%= medico.nombre %>
                         <%= medico.apellido %>
-                </h3> <br>
+                </h3>
                 <h3 class="Text">
                     <%= medico.correo %>
-                </h3> <br>
+                </h3>
                 <h3 class="Text">
                     <%= medico.cedulaProfesional %>
-                </h3> <br>
+                </h3>
                 <h3 class="Text">
                     <%= medico.especialidad %>
-                </h3> <br>
+                </h3>
                 <form action="/listaMedicos/solicitar/<%= medico.idMedico %>" method="post">
                     <input type="submit" value="Solicitar">
                 </form>
             </div>
-        </div>
         <% }; %>
+    </div>
+        
 
 </body>
 

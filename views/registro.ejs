@@ -1,33 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/styleRegistro.css">
-    <title>Registro</title>
+    <link rel="stylesheet" href="/stylesheets/styleLogin.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <title>Iniciar Sesión</title>
 </head>
+
 <body>
     <section>
-        <form action="/registro" method="post">
-            <% if(validacion === 'C'){ %>                    
-            <!-- Validación para saber si el inicio de sesión fue inválido -->
-            <% }else if(validacion === 'I'){ %>
-                <div class="novalido" style="margin: 2% 10% -3% 10%;">¡Error, datos incorrectos!</div>
-            <% }; %>
-            <label for="idUser">Nombre</label>
-            <input type="text" name="Nombre" id="Nombre" class="Container">
-            <label for="idUser">Apellido</label>
-            <input type="text" name="Apellido" id="Apellido" class="Container">
-            <label for="email">Correo electrónico:</label>
-            <input type="email" name="email" id="email" class="Container">
-            <label for="password">Contraseña:</label>
-            <input type="text" name="password" id="password" class="Container">
-            <label for="password">Confirmar Contraseña:</label>
-            <input type="text" name="confpassword" id="confpassword" class="Container">
-            <button>Registrar</button>
-            <a href="/registroMedico">¡Soy un medico!</a>
-        </form>
+        <div class="container-left">
+            <div id="logo">
+                <img src="http://assets.stickpng.com/images/610e9ab917344700049905ab.png" alt="">
+            </div>
+            <p>
+                Existen muchos tipos de enfermedades cardiacas pero la causa más común es el estrechamiento o bloqueo de
+                las arterias coronarias, los vasos sanguíneos que suministran sangre al propio corazón. A esto se le
+                llama enfermedad de las arterias coronarias y se desarrolla lentamente con el transcurso del tiempo. Es
+                la causa más importante por la cual las personas sufren infartos.
+
+                La enfermedad cardíaca se refiere a cualquier afección que afecte al corazón. Hay muchos tipos, algunos
+                de los cuales se pueden prevenir.
+
+            </p>
+        </div>
+        <div class="container-rigth">
+            <div class="form">
+                <% if(validacion==='C' ){ %>
+                    <!-- Validación para saber si el inicio de sesión fue inválido -->
+                    <% }else if(validacion==='I' ){ %>
+                        <div class="novalido" style="margin: 2% 10% -3% 10%;">¡Error, correo o contraseña incorrectos!
+                        </div>
+                        <% }; %>
+                            <h1>Registrarse</h1>
+                            
+                            <form action="/registro" method="post">
+                                <% if(validacion==='C' ){ %>
+                                    <!-- Validación para saber si el inicio de sesión fue inválido -->
+                                    <% }else if(validacion==='I' ){ %>
+                                        <div class="novalido" style="margin: 2% 10% -3% 10%;">¡Error, datos incorrectos!</div>
+                                        <% }; %>
+                                            <label for="idUser">Nombre</label>
+                                            <input type="text" name="Nombre" id="Nombre" class="Container">
+                                            <label for="idUser">Apellido</label>
+                                            <input type="text" name="Apellido" id="Apellido" class="Container">
+                                            <label for="email">Correo electrónico:</label>
+                                            <input type="email" name="email" id="email" class="Container">
+                                            <label for="password">Contraseña:</label>
+                                            <input type="text" name="password" id="password" class="Container">
+                                            <label for="password">Confirmar Contraseña:</label>
+                                            <input type="text" name="confpassword" id="confpassword" class="Container">
+                                            <button>Registrar</button>
+                                            <a href="/registroMedico">¡Soy un medico!</a>
+                            </form>
+            </div>
+        </div>
     </section>
 </body>
+
 </html>

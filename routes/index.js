@@ -33,7 +33,7 @@ router.post('/registro', function (req, res, next) {
   let contrasena = req.body.password;
   let confirmarContrasena = req.body.confpassword
   //falta validar contraseña y mas datos para que no esten vacios
-  sql = "INSERT INTO Pacientes VALUES ('" + nombre + "', '" + apellido + "', '" + correo + "', '" + contrasena + "');";
+  sql = "INSERT INTO Pacientes (nombre, apellido, correo, contrasena) VALUES ('" + nombre + "', '" + apellido + "', '" + correo + "', '" + contrasena + "');";
   console.log(sql)
   db.query(sql,
     function (err, results, fields) {

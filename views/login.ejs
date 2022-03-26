@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/styleLogin.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <title>Iniciar Sesión</title>
 </head>
 
@@ -17,18 +18,23 @@
             <div id="logo">
                 <img src="http://assets.stickpng.com/images/610e9ab917344700049905ab.png" alt="">
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum odio officia libero aspernatur reiciendis. Exercitationem nemo quasi quos repudiandae quisquam excepturi! Aspernatur quasi, id similique minima voluptatum ab illo exercitationem!</p>
+            <p>
+                Existen muchos tipos de enfermedades cardiacas pero la causa más común es el estrechamiento o bloqueo de
+                las arterias coronarias, los vasos sanguíneos que suministran sangre al propio corazón. A esto se le
+                llama enfermedad de las arterias coronarias y se desarrolla lentamente con el transcurso del tiempo. Es
+                la causa más importante por la cual las personas sufren infartos.
+
+                La enfermedad cardíaca se refiere a cualquier afección que afecte al corazón. Hay muchos tipos, algunos
+                de los cuales se pueden prevenir.
+
+            </p>
         </div>
         <div class="container-rigth">
             <div class="form">
-                <% if(validacion === 'C'){ %>                    
-                  <!-- Validación para saber si el inicio de sesión fue inválido -->
-                  <% }else if(validacion === 'I'){ %>
-                    <div class="novalido" style="margin: 2% 10% -3% 10%;">¡Error, correo o contraseña incorrectos!</div>
-                  <% }; %>
                 <h1>Iniciar Sesión</h1>
                 <form action="/login" method="post">
-                    <label for="email" class="margentopdif margenbot">Dirección de correo electrónico:</label>
+                    <label for="email" class="margentopdif margenbot">Dirección de correo
+                        electrónico:</label>
                     <input type="email" name="email" id="email">
                     <label for="password" class="margentop margenbot">Contraseña:</label>
                     <input type="password" name="password" id="password">
@@ -36,12 +42,16 @@
                         <input type="checkbox" name="" id="cajacheck">
                         <label for="" id="labelcajacheck">Recordar Contraseña</label>
                     </section>
-                    <input type="submit" value="INICIAR SESIÓN" class="margentop">
-                    <button href="/registro" class="margentop">
-                        <!--<a href="/registro" class="margentop">¿No tienes una cuenta? ¡Registrate!</a>-->
-                        REGISTRARSE
-                    </button>
-
+                    <input type="submit" value="INICIAR SESIÓN" class="margentop" id="BotonIniciarSesion">
+                </form>
+                <% if(validacion==='C' ){ %>
+                    <!-- Validación para saber si el inicio de sesión fue inválido -->
+                    <% }else if(validacion==='I' ){ %>
+                        <div class="novalido">¡Error, correo o contraseña incorrectos!
+                        </div>
+                        <% }; %>            
+                <form action="/registro" method="get">
+                    <input type="submit" value="REGISTRARSE" class="margentop" id="btnRegister">
                 </form>
             </div>
         </div>
