@@ -45,11 +45,10 @@
 #Cuerpo{
     position: absolute;
     top: 45px;
-    height: calc(100% - 45px);
+    height: calc;
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
 }
 .ButtonMenu{
     border-radius: 50%;
