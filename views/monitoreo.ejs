@@ -13,21 +13,21 @@
     Monitoreos
     <TABLE BORDER>
         <% for(Monitoreo of Monitoreos){ %>
-            <TR onclick="window.location.href = '/medico/paciente/ <%= Paciente.idPaciente %>'"">
-                        <TD>
-                            <h3>
-                                <%= Monitoreo.presionArterial %>
-                            </h3>
-                        </TD>
-                        <TD>
-                            <%= Monitoreo.colesterol %>
-                        </TD>
-                        <TD>
-                            <%= Monitoreo.progreso %>
-                        </TD>
-                    </TR>
-                <% }; %>
-        </TABLE>
+            <TR>
+                <TD>
+                    <h3>
+                        <%= Monitoreo.presionArterial %>
+                    </h3>
+                </TD>
+                <TD>
+                    <%= Monitoreo.colesterol %>
+                </TD>
+                <TD>
+                    <%= Monitoreo.progreso %>
+                </TD>
+            </TR>
+        <% }; %>
+    </TABLE>
 </body>
 
 </html>
