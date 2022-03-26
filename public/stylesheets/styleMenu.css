@@ -1,7 +1,6 @@
 *{
 	margin: 0px;
 	padding: 0px;
-    background-color: #ffffff;
     font-family: 'Inter', sans-serif;
 }
 #header{
@@ -11,33 +10,49 @@
     position: fixed;
 }
 #Hamoguesa{
-    width: 100px;
-    height: 80%;
-    background-color: #f1f8;
-    float: left;
-    background-image: url("https://www.samueldiosdado.com/wp-content/uploads/2017/08/Men%C3%BA-hamburguesa-herramienta-practica-o-icono-inutil.png");
-    background-size: 45%;
-    background-repeat: no-repeat;
-
-}
-#BarTitulo{
-    width: calc(100% - 200px);
+    width: 45px;
     height: 100%;
-    background-color: #f013fa;
+    float: left;
+    padding: 5px;
+}
+    #Hamoguesa>img{
+        width: 40px;
+        line-height:  45px;
+    }
+#BarTitulo{
+    width: calc(100% - 100px);
+    height: 100%;
     position: relative;
     float: left;
 }
     #Titulo{
         font-weight: 400;
         font-size: 25px;
-        background-color: rgba(0, 0, 0, 0);
         color: #ffffff;
         line-height: 45px;
         text-align: center;
     }
-#logo{
-    width: 100px;
+#Usuario{
+    width: 45px;
     height: 100%;
-    background-color: #f1f80f;
     float: right;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#Usuario>img{
+    width: 100%;
+}
+#Cuerpo{
+    position: absolute;
+    top: 45px;
+    height: calc(100% - 45px);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ButtonMenu{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
 }

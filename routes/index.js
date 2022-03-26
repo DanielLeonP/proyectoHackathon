@@ -72,6 +72,7 @@ router.post('/login', function (req, res, next) {
 
 
 router.get('/menu', function (req, res, next) {
+  
   res.render('Menu.ejs');
 });
 
