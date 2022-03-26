@@ -1,4 +1,17 @@
-CREATE TABLE Medico (
+DROP TABLE Medicos;
+DROP TABLE Pacientes;
+DROP TABLE Consultas;
+DROP TABLE Sintomas;
+DROP TABLE Recomendaciones;
+DROP TABLE SintomasRecomendaciones;
+DROP TABLE HistorialesClinicos;
+DROP TABLE Enfermedades;
+DROP TABLE Prevensiones;
+DROP TABLE Riesgos;
+DROP TABLE Tratamientos;
+
+
+CREATE TABLE Medicos (
     IdMedico INT PRIMARY KEY, 
     NombreMedico VARCHAR(20),
     ApellidoMedico VARCHAR(20), 
@@ -6,7 +19,7 @@ CREATE TABLE Medico (
     ContrasenaMedico VARCHAR(20) 
 );
 
-CREATE TABLE Paciente 
+CREATE TABLE Pacientes 
     (idPaciente INT PRIMARY KEY, 
     NombrePaciente VARCHAR(20),
     ApellidoPaciente VARCHAR(20), 
@@ -39,7 +52,7 @@ CREATE TABLE SintomasRecomendaciones (
     idCSintomas INT
 );
 
-CREATE TABLE HistorialClinico (
+CREATE TABLE HistorialesClinicos (
     idHistorialClinico INT PRIMARY KEY,    
     PadecimientoFamiliar VARCHAR(50),
     idPaciente INT
@@ -63,7 +76,7 @@ CREATE TABLE Riesgos (
     idEnfermedad INT
 );
 
-CREATE TABLE Tratamiento (
+CREATE TABLE Tratamientos (
     idTratamiento INT PRIMARY KEY, 
     DescripcionTratamiento VARCHAR(200),
     idEnfermedad INT 
