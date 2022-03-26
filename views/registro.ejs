@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/styleRegistro.css">
+    <title>Registro</title>
+</head>
+<body>
+    <section>
+        <form action="/registro" method="post">
+            <% if(validacion === 'C'){ %>                    
+            <!-- Validación para saber si el inicio de sesión fue inválido -->
+            <% }else if(validacion === 'I'){ %>
+                <div class="novalido" style="margin: 2% 10% -3% 10%;">¡Error, datos incorrectos!</div>
+            <% }; %>
+            <label for="idUser">idUsuario</label>
+            <input type="number" name="idUser" id="idUser" class="Container">
+            <label for="idUser">Nombre</label>
+            <input type="text" name="Nombre" id="Nombre" class="Container">
+            <label for="idUser">Apellido</label>
+            <input type="text" name="Apellido" id="Apellido" class="Container">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" name="email" id="email" class="Container">
+            <label for="password">Contraseña:</label>
+            <input type="text" name="password" id="password" class="Container">
+            <label for="password">Confirmar Contraseña:</label>
+            <input type="text" name="confpassword" id="confpassword" class="Container">
+            <button>Registrar</button>
+        </form>
+    </section>
+</body>
+</html>

@@ -68,3 +68,16 @@ CREATE TABLE Tratamiento (
     DescripcionTratamiento VARCHAR(200),
     idEnfermedad INT 
 );
+
+/* INSERTS */
+IdMedico INT PRIMARY KEY, 
+    NombreMedico VARCHAR(20),
+    ApellidoMedico VARCHAR(20), 
+    CorreoMedico VARCHAR(20), 
+    ContrasenaMedico VARCHAR(20) 
+
+INSERT INTO Medico VALUES (1, 'Israel', 'Nieto Ugalde', 'israelnu88@gmail.com', 'isra123');
+
+INSERT INTO Paciente VALUES (1, 'Daniel', 'Aros Ramirez', 'aros@gmail.com', '456');
+
+INSERT INTO Paciente VALUES (1, 'Alex', 'Vazquez Chavez', 'alex@correoinventado.com', '123');

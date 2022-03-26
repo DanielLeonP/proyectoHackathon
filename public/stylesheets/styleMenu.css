@@ -1,0 +1,43 @@
+*{
+	margin: 0px;
+	padding: 0px;
+    background-color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+#header{
+    width: 100%;
+    height: 45px;
+    background-color: #ff8080;
+    position: fixed;
+}
+#Hamoguesa{
+    width: 100px;
+    height: 80%;
+    background-color: #f1f8;
+    float: left;
+    background-image: url("https://www.samueldiosdado.com/wp-content/uploads/2017/08/Men%C3%BA-hamburguesa-herramienta-practica-o-icono-inutil.png");
+    background-size: 45%;
+    background-repeat: no-repeat;
+
+}
+#BarTitulo{
+    width: calc(100% - 200px);
+    height: 100%;
+    background-color: #f013fa;
+    position: relative;
+    float: left;
+}
+    #Titulo{
+        font-weight: 400;
+        font-size: 25px;
+        background-color: rgba(0, 0, 0, 0);
+        color: #ffffff;
+        line-height: 45px;
+        text-align: center;
+    }
+#logo{
+    width: 100px;
+    height: 100%;
+    background-color: #f1f80f;
+    float: right;
+}

@@ -12,8 +12,8 @@ function conectar() {
         port: 3306,
         //ssl: {ca: fs.readFileSync("your_path_to_ca_cert_file_BaltimoreCyberTrustRoot.crt.pem")}
     };
-    const conn = new mysql.createConnection(config);
-    conn.connect(
+    const db = new mysql.createConnection(config);
+    db.connect(
         function (err) {
             if (err) {
                 console.log("!!! Cannot connect !!! Error:");
@@ -23,6 +23,7 @@ function conectar() {
                 console.log("Conexion establecida a la base de datos.");
             }
         });
+    return db;
 };
 
 function readData() {
@@ -67,8 +68,5 @@ function deleteData() {
 };
 
 module.exports = {
-    "conectar": conectar,
-    "readData": readData,
-    "updateData": updateData,
-    "deleteData": deleteData
+    "conectar": conectar
 }
