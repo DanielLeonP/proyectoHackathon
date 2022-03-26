@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultas</title>
 </head>
+
 <body>
-    <h3>
- 
+    <h2>
         <%= Paciente.nombre %>
-        <%= Paciente.apellido %>
-    </h3>
-    <h3>
+            <%= Paciente.apellido %>
+    </h2>
+    <h2>
         <%= Paciente.correo %>
-    </h3>
-
-    <% for(Consulta of Consultas){ %>
-        <div class="container-alimento">
-            <div>
-                <h3>                  
-                    <%= Consulta.Fecha %>
-                </h3>
-                <h3>
+    </h2>
+    <TABLE BORDER>
+        <% for(Consulta of Consultas){ %>
+            <TR>
+                <TD>
+                    <h3>
+                        <%= Consulta.Fecha %>
+                    </h3>
+                </TD>
+                <TD>
                     <%= Consulta.descripcion %>
-                </h3>
-            </div>
-
-        </div>
-        <% }; %>
+                </TD>
+            </TR>
+            <% }; %>
+    </TABLE>
 </body>
+
 </html>

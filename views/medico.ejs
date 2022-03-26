@@ -9,21 +9,22 @@
 </head>
 
 <body>
-    <% for(Paciente of Pacientes){ %>
-        <div class="container-alimento">
-            <div id="" name="<%= Paciente.nombre %>" onclick="window.location.href = '/medico/paciente/ <%= Paciente.idPaciente %>'">
-                <h3>
-                  
-                    <%= Paciente.nombre %>
-                    <%= Paciente.apellido %>
-                </h3>
-                <h3>
-                    <%= Paciente.correo %>
-                </h3>
-            </div>
+        <TABLE BORDER>
+            <% for(Paciente of Pacientes){ %>
+                    <TR onclick="window.location.href = '/medico/paciente/ <%= Paciente.idPaciente %>'"">
+                        <TD>
+                            <h3>
 
-        </div>
-        <% }; %>
+                                <%= Paciente.nombre %>
+                                    <%= Paciente.apellido %>
+                            </h3>
+                        </TD>
+                        <TD>
+                            <%= Paciente.correo %>
+                        </TD>
+                    </TR>
+                <% }; %>
+        </TABLE>
 </body>
 
 </html>

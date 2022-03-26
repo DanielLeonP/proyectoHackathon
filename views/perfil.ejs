@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
 </head>
+
 <body>
-        <div class="container-alimento">
-            <h2>Paciente</h2>
-            <h3><%= Paciente.nombre %></h3> <br>
-            <h3><%= Paciente.apellido %></h3> <br>
-            <h3><%= Paciente.correo %></h3> <br>
-        </div>
-    <% for(EnfermedadPaciente of EnfermedadesPaciente){ %>
-        <div class="container-alimento">
-            <h2>Enfermedades</h2>
-            <h3><%= EnfermedadPaciente.NombreEnfermedad %></h3> <br>
-            <h3><%= EnfermedadPaciente.DescripcionEnfermedad %></h3> <br>
-        </div>
-        <% }; %>
-        <div id="" name="" onclick="window.location.href = '/listaMedicos'">
-            Conseguir medico
-        </div>
+    <div class="container-alimento">
+        <h2>Paciente</h2>
+        <h3>
+            <%= Paciente.nombre %>
+        </h3> <br>
+        <h3>
+            <%= Paciente.apellido %>
+        </h3> <br>
+        <h3>
+            <%= Paciente.correo %>
+        </h3> <br>
+    </div>
+    <h2>Enfermedades</h2>
+    <TABLE BORDER>
+        <% for(EnfermedadPaciente of EnfermedadesPaciente){ %>
+            <TR onclick="window.location.href = '/medico/paciente/ <%= Paciente.idPaciente %>'"">
+                        <TD>
+                            <h3>
+                                <%= EnfermedadPaciente.NombreEnfermedad %>
+                            </h3>
+                        </TD>
+                        <TD>
+                            <%= EnfermedadPaciente.DescripcionEnfermedad %>
+                        </TD>
+                    </TR>
+                <% }; %>
+        </TABLE>
+            <div id="" name="" onclick=" window.location.href='/listaMedicos'">
+                Conseguir medico
+            </div>
 </body>
+
 </html>

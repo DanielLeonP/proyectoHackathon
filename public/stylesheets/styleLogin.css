@@ -51,6 +51,14 @@ section{
     box-sizing: border-box;
 }
 
+#regForm{
+    height: 80%;
+}
+
+#regForm2{
+    height: 90%;
+}
+
 .form>h1{
     text-align: center;
     font-size: 30px;
@@ -65,8 +73,16 @@ section{
     margin-top: 30px;
 }
 
+.margentop2{
+    margin-top: 8px;
+}
+
 .margentopdif{
     margin-top: 50px;
+}
+
+.margentopdif2{
+    margin-top: 25px;
 }
 
 #recordarPass{
@@ -89,7 +105,9 @@ section{
 
 input{
     height: 30px;
-    font-size: 18px;  
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid;  
 }
 
 #BotonIniciarSesion{
@@ -115,7 +133,15 @@ input{
     margin-bottom: 10px;
 }
 
+.margenbot2{
+    margin-bottom: 5px;
+}
+
 .novalido{
     text-align: center;
     margin-top: 10px;
+}
+
+button{
+    height: 30px;
 }

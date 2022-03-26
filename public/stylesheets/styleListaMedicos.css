@@ -33,12 +33,9 @@
         text-align: center;
     }
 #CuerpoContenido{
-    position: absolute;
-    top: 45px;
-    height: calc(100% - 45px);
     width: 100%;
-    overflow-y: scroll;
-    box-sizing: border-box;
+    height: calc(100% - 45px);
+    background-color: green;
 }
 #TarjetaDeMedico{
     width: 90%;

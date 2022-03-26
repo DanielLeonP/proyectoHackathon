@@ -22,10 +22,35 @@
         </div>
     </div>
 
-    
-    <div class="CuerpoContenido">
-        <% for(medico of Medicos){ %>
-            <div id="TarjetaDeMedico">
+    <div class="CuerpoContenido" style="padding-top: 100px; padding-left: 30%;">
+        <TABLE BORDER>
+            <% for(medico of Medicos){ %>
+                <TR onclick="window.location.href = '/medico/paciente/ <%= Paciente.idPaciente %>'"">
+                            <TD>
+                                <h3>
+                                    <%= medico.nombre %>
+                                     <%= medico.apellido %>
+                                </h3>
+                            </TD>
+                            <TD>
+                                <%= medico.correo %>
+                            </TD>
+                            <TD>
+                                <%= medico.cedulaProfesional %>
+                            </TD>
+                            <TD>
+                                <%= medico.especialidad %>
+                            </TD>
+                            <TD>
+                                <form action=" /listaMedicos/solicitar/<%=medico.idMedico %>" method="post">
+                                <input type="submit" value="Solicitar">
+                                </form>
+                    </TD>
+                </TR>
+                <% }; %>
+        </TABLE>
+        <!-- <% for(medico of Medicos){ %>
+            <div id=" TarjetaDeMedico">
                 <h3 class="Text">
                     <%= medico.nombre %>
                         <%= medico.apellido %>
@@ -43,9 +68,9 @@
                     <input type="submit" value="Solicitar">
                 </form>
             </div>
-        <% }; %>
+            <% }; %> -->
     </div>
-        
+
 
 </body>
 

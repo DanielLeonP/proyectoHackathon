@@ -10,19 +10,24 @@
 </head>
 
 <body>
-    <% for(Monitoreo of Monitoreos){ %>
-        <div class="container-alimento">
-            <h3>
-                <%= Monitoreo.presionArterial %>
-            </h3> <br>
-            <h3>
-                <%= Monitoreo.colesterol %>
-            </h3> <br>
-            <h3>
-                <%= Monitoreo.progreso %>
-            </h3> <br>
-        </div>
-        <% }; %>
+    Monitoreos
+    <TABLE BORDER>
+        <% for(Monitoreo of Monitoreos){ %>
+            <TR onclick="window.location.href = '/medico/paciente/ <%= Paciente.idPaciente %>'"">
+                        <TD>
+                            <h3>
+                                <%= Monitoreo.presionArterial %>
+                            </h3>
+                        </TD>
+                        <TD>
+                            <%= Monitoreo.colesterol %>
+                        </TD>
+                        <TD>
+                            <%= Monitoreo.progreso %>
+                        </TD>
+                    </TR>
+                <% }; %>
+        </TABLE>
 </body>
 
 </html>
