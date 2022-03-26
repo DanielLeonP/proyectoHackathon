@@ -40,14 +40,12 @@
     overflow-y: scroll;
     box-sizing: border-box;
 }
-.Text{
-
-}
-.Button{
+#TarjetaDeMedico{
     width: 90%;
     height: 80px;
     background-color: #A2A0A0;
     margin-top: 30px;
     margin-left: 65px;
     border: 0;
+    box-sizing: border-box;
 }
